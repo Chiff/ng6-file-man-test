@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {ConfigInterface, TreeModel} from 'ng6-file-man';
+import { Component } from '@angular/core';
+import { ConfigInterface, DownloadModeEnum, TreeModel } from 'ng6-file-man';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: []
 })
 export class AppComponent {
   tree: TreeModel;
@@ -14,16 +14,16 @@ export class AppComponent {
     const treeConfig: ConfigInterface = {
       baseURL: 'http://localhost:8080/',
       api: {
-        listFile: 'api/file/list',
-        uploadFile: 'api/file/upload',
-        downloadFile: 'api/file/download',
-        deleteFile: 'api/file/remove',
-        createFolder: 'api/file/directory',
-        renameFile: 'api/file/rename',
-        searchFiles: 'api/file/search'
+        listFile: 'api/list',
+        uploadFile: 'api/upload',
+        downloadFile: 'api/download',
+        deleteFile: 'api/remove',
+        createFolder: 'api/directory',
+        renameFile: 'api/rename',
+        searchFiles: 'api/search'
       },
       options: {
-        allowFolderDownload: false,
+        allowFolderDownload: DownloadModeEnum.DOWNLOAD_FILES,
         showFilesInsideTree: false
       }
     };
